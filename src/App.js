@@ -1,8 +1,9 @@
 import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
+import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Practice1 from "./components/practice1";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   const expenses = [
@@ -59,6 +60,12 @@ function App() {
       <Practice1 name="Kartik kh" age={age} gender="Male"></Practice1>
       <Expenses obj={expenses}></Expenses>
     </div>
+    // return React.createElement(
+      // 'div',   //element which we want to create
+      // {},      //an object which sets the attributes
+      // React.createElement('h2',{},"Let's get started"),
+    //React.createElement(Expenses,{items:expenses})
+    //);
   );
 }
 
