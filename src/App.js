@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
-import React from "react";
+import React,{ useState } from "react";
 import "./App.css";
+import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Practice1 from "./components/practice1";
 import Expenses from "./components/Expenses/Expenses";
@@ -33,9 +34,17 @@ function App() {
 
   const age = 25;
 
+  const [count,setCount] = useState(1);
+  
+  const increment = () => {
+    // setCount(count + 1);
+    setCount((a) => a * 2);  //updater function
+  }
+
   return (
     <div>
       <h2>Let's get started!</h2>
+      <NewExpense/>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
@@ -57,8 +66,9 @@ function App() {
         date={expenses[3].date}>
       </ExpenseItem>
       <ExpenseItem title={title} amount= {amount} date = {date}></ExpenseItem>
-      <Practice1 name="Kartik kh" age={age} gender="Male"></Practice1>
+      {/* <Practice1 name="Kartik kh" age={age} gender="Male"></Practice1> */}
       <Expenses obj={expenses}></Expenses>
+      <button onClick={increment}>{count}</button>
     </div>
     // return React.createElement(
       // 'div',   //element which we want to create
