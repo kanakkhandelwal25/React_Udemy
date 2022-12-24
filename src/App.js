@@ -5,6 +5,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Practice1 from "./components/practice1";
 import Expenses from "./components/Expenses/Expenses";
+import ExpensesFilter from "./components/Expenses/ExpensesFilter";
 
 function App() {
   const expenses = [
@@ -41,10 +42,16 @@ function App() {
     setCount((a) => a * 2);  //updater function
   }
 
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  }
+
   return (
     <div>
       <h2>Let's get started!</h2>
-      <NewExpense/>
+      {/* <ExpensesFilter/> */}
+      <NewExpense onAddExpense = {addExpenseHandler}/>
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
